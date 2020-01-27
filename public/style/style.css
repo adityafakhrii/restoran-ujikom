@@ -1,0 +1,179 @@
+body{
+	font-family: 'arial', sans-serif;
+}
+
+a{
+	text-decoration: none;
+}
+
+nav{
+	width: 102%;
+	margin-left: -19px;
+	margin-top: -8px;
+	background-color: #EB2134;
+	height: ;
+}
+ul{
+	display: inline-block;
+	list-style: none;
+}
+
+li{
+	display: inline-block;
+	margin-left:5px;
+}
+
+.ul-right{
+	position: relative;
+	left:44%;
+}
+
+.menu-cari{
+	margin-right: 10px;
+}
+
+.rest{
+	color: #EB2134;
+	font-weight: bold;
+}
+
+.rest span{
+	color: #000;
+}
+
+.rest-menu{
+	color: #fff;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.rest-menu2{
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 12px;
+	padding-left: 12;
+	border-radius: 10px;
+
+}
+
+.rest-menu2:hover{
+	background-color: #fff;
+	color: #EB2134;
+	transition: 0.5s;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 12px;
+	padding-left: 12px;
+	border-radius: 10px;
+}
+
+.btn{
+	cursor: pointer; 
+}
+
+.btn-cari{
+	color: #EB2134;
+	background-color: #fff;
+	font-weight: bold;
+
+}
+
+.btn-cari:hover{
+	color: #fff;
+	transition: 0.5s;
+	background-color: #EB2134;
+	font-weight: bold;
+}
+
+.cari{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 16px;
+	padding-left: 16px;
+	border-radius: 10px;
+	border:none;
+}
+
+form{
+	margin-bottom: 0;
+}
+
+.center{
+	text-align: center;
+	margin-top: 3.5%;	
+}
+
+.gambar{
+	width: 100%;
+	height: 25%;
+	border-top-right-radius: 17px;
+	border-top-left-radius: 17px;
+}
+
+.card-food{
+	box-shadow: 2px 7px 20px #ccc;
+	float: left;
+	width: 18%;
+	padding-bottom: 40px;
+	margin-left: 6%;
+	margin-right: -14px;
+	margin-bottom: 25px;
+	border-radius: 17px;
+	text-align: center;
+	margin-top: 2.7%;
+}
+
+.kat{
+	color: #EB2134;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.nama{
+	color: #000;
+	font-weight: bold;
+	font-size: 20px;
+	margin-top: -10px;
+}
+
+.harga{
+	font-size: 14px;
+	margin-top: -15px;
+	margin-bottom: 30px;
+}
+
+.order{
+	background-color: #fff;
+	border:1px solid #EB2134;
+	border-radius: 15px;
+	color: #EB2134;
+	padding: 7px 13px;
+	font-weight: bold;
+}
+
+.out{
+	background-color: #c2c2c2;
+	border:1px solid #c2c2c2;
+	border-radius: 15px;
+	color: #fff;
+	padding: 7px 20px;
+	font-weight: bold;
+	cursor: default;
+	pointer-events: none;
+
+}
+
+.order:hover{
+	background-color: #EB2134;
+	border:1px solid #EB2134;
+	border-radius: 15px;
+	color: #fff;
+	transition: 0.6s;
+}
+
+.text{
+	margin-top: -10px;
+}
