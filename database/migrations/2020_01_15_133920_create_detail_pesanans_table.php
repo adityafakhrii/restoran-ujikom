@@ -15,6 +15,7 @@ class CreateDetailPesanansTable extends Migration
     {
         Schema::create('detail_pesanans', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('id_pelanggan')->unsigned();
             $table->bigInteger('id_pesanan')->unsigned();
             $table->bigInteger('id_menu')->unsigned();
             $table->integer('jumlah');

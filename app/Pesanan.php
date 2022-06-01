@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pesanan extends Model
 {
     protected $table = 'pesanans';
-    protected $fillable = ['id_pelanggan','total_bayar','keterangan','id_user'];
+    protected $fillable = ['no_pesanan','id_pelanggan','total_bayar','keterangan','id_user'];
 
     public function pelanggan(){
     	return $this->belongsTo('App\Pelanggan','id_pelanggan');
@@ -19,5 +19,9 @@ class Pesanan extends Model
 
     public function detail_pesanan(){
     	return $this->hasMany('App\Detail_pesanan','id_pesanan');
+    }
+
+    public function transaksi(){
+        return $this->hasMany('App\Transaksi','id_transaksi');
     }
 }

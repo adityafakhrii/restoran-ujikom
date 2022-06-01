@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Pelanggan;
 use App\Meja;
+use App\Detail_pesanan;
 use Auth;
 use Session;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class PelangganController extends Controller
         if ($meja->id == $request->id_meja && $meja->password == $request->password ) {
 
             $pelanggan = new Pelanggan;
-            $pelanggan->nama = $request->nama;
+            $pelanggan->nama_pelanggan = $request->nama;
             $pelanggan->id_meja = $request->id_meja;
             $pelanggan->save();
 
@@ -36,6 +37,8 @@ class PelangganController extends Controller
             Session::put('login', TRUE);
             Session::put('nama',$request->nama);
             Session::put('no_meja',$request->id_meja);
+            Session::put('id_pelanggan',$pelanggan->id);
+            Session::put('keranjang','keranjang');
 
     	   return redirect('/daftarmenu');
         }else {
@@ -54,5 +57,10 @@ class PelangganController extends Controller
         Session::forget();
 
         return redirect('/');
+    }
+
+    public function pesanan(){
+        $pesanan = Detail_pesanan::where('id_pelanggan','=',Session::get('id_pelanggan'))->get();
+        return view('pelanggan.pesanan-saya',compact('pesanan'));
     }
 }

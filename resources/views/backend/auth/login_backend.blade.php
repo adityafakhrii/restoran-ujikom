@@ -1,78 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login | Restoran</title>
-    <style>
-        body{
-            font-family: sans-serif;
-        }
-        .login-box{
-            padding: 40px 30px 40px 30px;
-            position: absolute;
-            transform: translate(-50%,-50%);
-            left: 50%;
-            top: 30%;
-            box-shadow: 8px 7px 25px #ccc;
-            border-radius: 4%;
-        }
-        .input{
-            padding: 10px;
-        }
-        select{
-            cursor: pointer;
-            width: 100%;
-        }
-        .mgtop{
-            margin-top: 20px;
-        }
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .btn{
-            padding: 10px 20px;
-            cursor: pointer;
-            border: none;
-        }
-        .btn-grey{
-            background-color: #ccc;
-            transition: 0.4s;
-            color: #555;
-        }
-        .btn-grey:hover{
-            background-color: #777;
-            color: #ccc;
-        }
-        .title{
-            text-align: center;
-
-        }
-        .title-login{
-            font-size: 20px;
-        }
-
-
-
-
-    </style>
-</head>
-<body>
-    <div class="login-box">
-        <div class="title">
-            <h2 class="title-login">Login | Backend</h2>
+        <title>Login | Backend</title>
+        
+        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}" crossorigin="anonymous">
+        
+    </head>
+    <body>
+    <div class="container mt-lg-5">
+        <div class="row">
+            <div class="col">
+                <h3>Silahkan Login</h3>
+            </div>
         </div>
-        <form action="/postbackend" method="POST">
+        <form action="postbackend" method="POST">
             @csrf
-            <input type="email" name="email" placeholder="Masukkan email anda..." required class="input"><br><br>
-            
-            <input type="password" name="password" placeholder="password" class="input">
-            <br><br>
-            <button class="btn btn-grey">Submit</button>
-            
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" class="form-control" id="email" placeholder="Masukkan email anda...">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Masukkan password anda...">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         @if(Session::has('fail'))
-            <h1>Login Gagal</h1>
+            <h3>Login Gagal</h3>
         @endif
     </div>
-</body>
+        
+    </body>
 </html>
-
-            <!-- <center><button type="submit" class="btn mgtop btn-grey">Masuk</button></center> -->

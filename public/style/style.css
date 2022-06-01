@@ -2,20 +2,51 @@ body{
 	font-family: 'arial', sans-serif;
 }
 
+.bg{
+	background-image: url('bg/daftarmenu.jpg');
+	background-size: 100vh;
+}
+
+.header{
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+}
+
+.formaddmin{
+	display: inline-block;
+}
+
+.addmin{
+	border-radius: 5px;
+	border: 1px solid #EB2134;
+	margin-top: -40px;
+	background-color: #fff;
+	color: #EB2134;
+	transition: 0.5s;
+}
+
+.addmin:hover{
+	border: 1px solid #EB2134;
+	background-color: #EB2134;
+	color: #fff;
+}
+
 a{
 	text-decoration: none;
 }
 
 nav{
-	width: 102%;
-	margin-left: -19px;
-	margin-top: -8px;
+	width: 100%;
 	background-color: #EB2134;
-	height: ;
+	position: absolute;
+	right: 0;
 }
 ul{
 	display: inline-block;
 	list-style: none;
+	left: 34%;
 }
 
 li{
@@ -25,7 +56,7 @@ li{
 
 .ul-right{
 	position: relative;
-	left:44%;
+	
 }
 
 .menu-cari{
@@ -103,7 +134,7 @@ form{
 
 .center{
 	text-align: center;
-	margin-top: 3.5%;	
+	margin-top: 8.5%;	
 }
 
 .gambar{
@@ -130,6 +161,7 @@ form{
 	color: #EB2134;
 	font-weight: bold;
 	font-size: 14px;
+	float: left: 0;
 }
 
 .nama{
@@ -143,6 +175,21 @@ form{
 	font-size: 14px;
 	margin-top: -15px;
 	margin-bottom: 30px;
+}
+
+.checkout{
+	position: absolute;
+	left: 50%;
+}
+
+.keranjang{
+	margin-top:5%;
+	position: static;
+}
+
+.total{
+	margin-top: -25px;
+	margin-bottom: 10px;
 }
 
 .order{

@@ -17,4 +17,8 @@ class Menu extends Model
     	return $this->hasMany('App\Detail_pesanan','id_pesanan');
     }
 
+    public function keranjang(){
+    	return $this->hasMany('App\Keranjang','id_keranjang');
+    }
+
 }

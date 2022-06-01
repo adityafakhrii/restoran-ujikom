@@ -1,84 +1,49 @@
+</html>
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login | Restoran</title>
-    <style>
-        body{
-            font-family: sans-serif;
-        }
-        .login-box{
-            padding: 40px 30px 40px 30px;
-            position: absolute;
-            transform: translate(-50%,-50%);
-            left: 50%;
-            top: 30%;
-            box-shadow: 8px 7px 25px #ccc;
-            border-radius: 4%;
-        }
-        .input{
-            padding: 10px;
-        }
-        select{
-            cursor: pointer;
-            width: 100%;
-        }
-        .mgtop{
-            margin-top: 20px;
-        }
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        .btn{
-            padding: 10px 20px;
-            cursor: pointer;
-            border: none;
-        }
-        .btn-grey{
-            background-color: #ccc;
-            transition: 0.4s;
-            color: #555;
-        }
-        .btn-grey:hover{
-            background-color: #777;
-            color: #ccc;
-        }
-        .title{
-            text-align: center;
-
-        }
-        .title-login{
-            font-size: 20px;
-        }
-
-
-
-
-    </style>
-</head>
-<body>
-    <div class="login-box">
-        <div class="title">
-            <h2 class="title-login">Login | Restoran</h2>
+        <title>Login | Restoran</title>
+        
+        <link rel="stylesheet" href="{{asset('bootstrap/css/bootstrap.min.css')}}" crossorigin="anonymous">
+        
+    </head>
+    <body>
+    <div class="container mt-lg-5">
+        <div class="row">
+            <div class="col">
+                <h3>Selamat datang! Silahkan Login</h3>
+            </div>
         </div>
         <form action="/postpelanggan" method="POST">
             @csrf
-            <input type="text" name="nama" placeholder="Masukkan nama anda..." autocomplete="off" required class="input"><br><br>
-            <select name="id_meja" class="input">
-                <option value="">Pilih Meja</option>
-                @foreach($mejas as $meja)
-                    <option value="{{$meja->id}}">Meja No. {{$meja->no_meja}}</option>
-                @endforeach
+          <div class="form-group">
+            <label for="nama">Nama Pelanggan</label>
+            <input type="nama" name="nama" class="form-control" id="nama">
+          </div>
+          <div class="form-group">
+            <label for="meja">No. Meja</label>
+            <select required name="id_meja" class="custom-select" id="meja">
+                <option selected disabled>Pilih No. Meja</option>
+            @foreach($mejas as $meja)
+                <option value="{{$meja->id}}">Meja No. {{$meja->no_meja}}</option>
+            @endforeach
             </select>
-            <br><br>
-            <input type="password" name="password" placeholder="password" class="input">
-            <br><br>
-            <button class="btn btn-grey">Submit</button>
-            
+          </div>
+          <div class="form-group">
+            <label for="password">Password Meja</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="masukkan password meja">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         @if(Session::has('gagal'))
-            <h1>Login Gagal</h1>
+            <h4>Password meja salah</h4>
         @endif
     </div>
-</body>
+        
+    </body>
 </html>
 
-            <!-- <center><button type="submit" class="btn mgtop btn-grey">Masuk</button></center> -->
